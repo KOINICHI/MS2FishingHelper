@@ -60,7 +60,7 @@ Main.controller('ArikkariHelperCtrl', ['$scope', '$http', function($scope, $http
 	$scope.viewMap = function(e) {
         if ($scope.mapShown) {
             $('#my-quest-wrap').hide();
-            $('#worldmap-wrap').css('width', '100%');
+            $('#worldmap-wrap').css('width', '98%');
         }
         else {
             $('#my-quest-wrap').show();
