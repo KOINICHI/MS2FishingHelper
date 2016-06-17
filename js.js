@@ -59,14 +59,12 @@ Main.controller('ArikkariHelperCtrl', ['$scope', '$http', function($scope, $http
 	$scope.currentScreen = 0;
 	$scope.viewMap = function(e) {
         if ($scope.mapShown) {
-            $('#my-quest-wrap').css('width', '100%');
-            $('#worldmap-wrap').hide();
-            $('#my-quest-worldmap-button').text('¸Ê º¸ÀÌ±â');
+            $('#my-quest-wrap').hide();
+            $('#worldmap-wrap').css('width', '100%');
         }
         else {
-            $('#my-quest-wrap').css('width', '40%');
-            $('#worldmap-wrap').show();
-            $('#my-quest-worldmap-button').text('¸Ê ¼û±â±â');
+            $('#my-quest-wrap').show();
+            $('#worldmap-wrap').css('width', '85%');
         }
         $scope.mapShown = !$scope.mapShown;
 	}
@@ -80,11 +78,11 @@ Main.controller('ArikkariHelperCtrl', ['$scope', '$http', function($scope, $http
 			if ($scope.currentScreen == 2) {
 				$scope.currentScreen = 0;
 			}
-			else {
+			else { 
 				$scope.currentScreen = 2;
 			}
 		}
-        if (e.keyCode == 77) {
+        if (e.keyCode == 77) { // M
             $scope.viewMap();
         }
 	}
