@@ -9,6 +9,7 @@
 }
 body {
     height: 100%;
+    margin: 0px;
 }
 
 a {
@@ -144,9 +145,9 @@ a:hover {
     right: 0;
     vertical-align: top;
     margin: 0px;
-    width: 40%; 
-    height: calc(100% - 15px);
-    overflow-y: scroll;
+    width: 15%; 
+    height: 100%;
+    overflow-y: hidden;
 }
 .my-quest-button-small {
     margin-left: 5px;
@@ -172,6 +173,8 @@ a:hover {
 
 .my-quest {
     list-style: none;
+    margin: 0px;
+    padding-left: 15px;
 }
 .my-quest-list-item {
     display: block;
@@ -231,7 +234,7 @@ a:hover {
     position: fixed;
     vertical-align: top;
     overflow: hidden;
-    width: 60%;
+    width: 85%;
     height: calc(100% - 30px);
     margin: 10px;
     background: url('https://koinichi.github.io/MS2DailiesHelper/bg_map_ptn.jpg');

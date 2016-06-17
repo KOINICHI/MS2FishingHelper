@@ -26,15 +26,8 @@
     </div>
     <div id="my-quest-wrap">
         <ul class='my-quest'>
-            <li name="{{x.id}}" class='my-quest-list-item {{Status[x.status]}}' ng-repeat="x in (Quests | myquestFilter | listFilter:filtertext)" ng-click="clearQuest($event)">
+            <li name="{{x.id}}" class='my-quest-list-item {{Status[x.status]}}' ng-repeat="x in Quests" ng-click="toggleQuest($event)">
                 <span name="{{x.id}}" class="my-quest-list-item-desc">{{x.desc}}</span>
-                <span name="{{x.id}}_map" class="my-quest-list-item-map" ng-mouseenter="showMapList($event)" ng-mouseleave="hideMapList($event)">🚁</span>
-            </li>
-        </ul>
-        <ul class='my-quest'>
-            <li name="{{x.id}}" class='my-quest-list-item {{Status[x.status]}}' ng-repeat="x in (Quests | notstartedFilter | listFilter:filtertext)" ng-click="startQuest($event)">
-                <span name="{{x.id}}" class="my-quest-list-item-desc">{{x.desc}}</span>
-                <span name="{{x.id}}_map" class="my-quest-list-item-map" ng-mouseenter="showMapList($event)" ng-mouseleave="hideMapList($event)">🚁</span>
             </li>
         </ul>
     </div>
@@ -47,8 +40,12 @@
             <br />
             <b>2016/6/17 : 오픈!</b><br />
             <br />
+            <br />
             어... 그냥... 이게 다예요... <br />
-            마지막으로 깨알 홍보 플레이 스토어에서 <a href="https://play.google.com/store/apps/details?id=kr.koinichi.ms2bosstimer" target="_blank">MS2 보스 타이머</a>도 확인해주세여! <br />
+            <br />
+            <a href="https://play.google.com/store/apps/details?id=kr.koinichi.ms2bosstimer" target="_blank">MS2 보스 타이머</a><br />
+            <a href="http://koinichi.github.io/MS2DailiesHelper" target="_blank">일퀘 도우미</a><br />
+            <a href="http://cheesemochi.ichino.se/" target="_blank">누타만 파티 짜기</a><br />
             <br />
             - '메럿' 길드 치즈모치 -  <br />
         </p>

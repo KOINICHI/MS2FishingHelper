@@ -89,32 +89,18 @@ Main.controller('ArikkariHelperCtrl', ['$scope', '$http', function($scope, $http
         }
 	}
 	
-	$scope.startQuest = function(e) {
+	$scope.toggleQuest = function(e) {
 		e.stopPropagation();
 		var id = parseInt(e.target.attributes['name'].value)
 		for (i=0; i<$scope.Quests.length; i++) {
 			if ($scope.Quests[i].id == id) {
-				$scope.Quests[i].status = 1;
-				setCookie(id, '1', 365);
-				for (j=0; j<$scope.Quests[i].map.length; j++) {
-					$scope.Maps[$scope.Quests[i].map[j]].quests.push($scope.Quests[i].desc);
-				}
-            break;
-			}
-		}
-	};
-	$scope.clearQuest = function(e) {
-		e.stopPropagation();
-		var id = parseInt(e.target.attributes['name'].value)
-		for (i=0; i<$scope.Quests.length; i++) {
-			if ($scope.Quests[i].id == id) {
-				if ($scope.Quests[i].status == 2) {
+				if ($scope.Quests[i].status == 0) {
 					$scope.Quests[i].status = 1;
 					setCookie(id, '1', 365);
 				}
 				else if ($scope.Quests[i].status == 1) {
-					$scope.Quests[i].status = 2;
-					setCookie(id, '2', 365);
+					$scope.Quests[i].status = 0;
+					setCookie(id, '0', 365);
 				}
 				break;
 			}
