@@ -1,0 +1,334 @@
+* {
+    font-size: 12pt;
+    font-family: '맑은 고딕', 'Malgun Gothic';
+
+    webkit-user-select: none; /* webkit (safari, chrome) browsers */
+    -moz-user-select: none; /* mozilla browsers */
+    -khtml-user-select: none; /* webkit (konqueror) browsers */
+    -ms-user-select: none; /* IE10+ */
+}
+body {
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: #ff3333;
+    transition: color 0.3s;
+}
+a:hover {
+	color:#faa;
+}
+
+#main {
+    margin: 80px 0px 0px 0px;
+    clear:both;
+}
+
+.float-left {
+    float: left;
+}
+.float-right {
+    float: right;
+}
+.float-clear {
+    clear: both;
+}
+
+.hidden {
+    visibility: hidden;
+    width: 0px;
+    height: 0px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.popup-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    cursor: pointer;
+}
+.popup {
+    position: fixed;
+    z-index: 9999;
+    top: 5%;
+    left: 0;
+    right: 0;
+    width: 60%;
+    margin: 0px auto;
+    padding: 30px;
+    
+    border: #cccccc 3px solid;
+    border-radius: 10px;
+    background: #ffffff;
+}
+.popup-close-button {
+    position: absolute;
+    background-color: transparent;
+    color: #000000;
+    font-size: 16pt;
+    top: 0;
+    right: 0;
+    padding: 0;
+    margin: 5px 10px 0px 0px;
+    border: none;
+    width: 30px;
+    height: 30px;
+}
+.popup-close-button:hover {
+    cursor: pointer;
+}
+
+
+.my-quest-control {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+
+    height: 40px;
+    margin: 0px;
+    padding: 20px 40px 20px 40px;
+    background-color: #efefef;
+}
+.my-quest-desc {
+    display:inline-block;
+    float:left;
+    clear:left;
+    margin: 5px 10px 0px 10px;
+    font-size: 16pt;
+}
+.my-quest-desc:hover {
+    cursor: pointer;
+    color: #aaaaaa;
+}
+
+#my-quest-map-list {
+    z-index: 21;
+    position: absolute;
+    right: 70px;
+    list-style: none;
+    width: 220px;
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+    border: #aaaaaa 2px solid;
+    border-radius: 5px;
+    box-shadow: #aaaaaa 3px 3px 5px;
+    background: rgba(255,255,255,0.9);
+}
+
+.my-quest-map-list-item {
+    color: #000000;
+    font-size: 11pt;
+    text-align: left;
+}
+
+.search {
+    display:inline-block;
+    float: left;
+    margin: 0px 10px 0px 10px;
+    width: 250px;
+    height: 35px;
+}
+.search:hover {
+    border: #cfcfcf 2px solid;
+}
+
+#my-quest-wrap {
+    position: fixed;
+    right: 0;
+    vertical-align: top;
+    margin: 0px;
+    width: 40%; 
+    height: calc(100% - 80px);
+    overflow-y: scroll;
+}
+.my-quest-button-small {
+    margin-left: 5px;
+    border-radius: 3px;
+    border: #ccccff 2px solid;
+    background-color: #fcfcfc;
+    min-width: 40px;
+    height: 40px;
+}
+.my-quest-button {
+    margin-left: 5px;
+    border-radius: 3px;
+    border: #cccccc 2px solid;
+    background-color: #fcfcfc;
+    max-width: 200px;
+    min-width: 180px;
+    height: 40px;
+}
+.my-quest-button:hover, .my-quest-button-small:hover {
+    background-color: #f9f9f9;
+    cursor: pointer;
+}
+
+.my-quest {
+    list-style: none;
+}
+.my-quest-list-item {
+    display: block;
+    text-align: left;
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.my-quest-list-item > span {
+    display:inline-block;
+}
+.my-quest-list-item-desc {
+    width: 85%;
+}
+.my-quest-list-item-map {
+    float: right;
+    font-size: 22pt;
+    line-height: 10pt;
+    z-index: 1;
+}
+.my-quest-list-item-map:hover {
+    color: rgba(0,144,144,1);
+}
+.cleared {
+    border-bottom: #999999 2px solid;
+}
+.cleared  > .my-quest-list-item-desc {
+    color: #000000;
+    text-decoration: line-through;
+}
+.cleared:hover {
+    border-color: #777777;
+}
+.ongoing {
+    color: #000000;
+    border-bottom: #999999 2px solid;
+}
+.ongoing:hover {
+    border-color: #777777;
+}
+.notstarted {
+    color: #999999;
+    border-bottom: #ececec 2px solid;
+}
+.notstarted:hover {
+    border-color: #cccccc;
+}
+
+#worldmap-wrap {
+    position: fixed;
+    vertical-align: top;
+    overflow: hidden;
+    width: 60%;
+    height: calc(100% - 110px);
+    margin: 10px;
+    background: url('http://koinichi.github.io/MS2DailiesHelper/bg_map_ptn.jpg');
+    background-repeat: repeat;
+    border: #cccccc 3px solid;
+    border-radius: 10px;
+}
+#worldmap {
+    width: 100%;
+    height: 100%;
+    margin: -5% 0px;
+    padding: 0px;
+    
+    border-radius:7px;
+}
+#worldmap-toggle {
+    display: inline;
+    z-index: 100;
+    position: absolute;
+    padding: 0px;
+    background: rgba(0, 0, 0, 0.5);
+    color: rgb(255, 255, 255);
+    border: #333333 2px solid;
+    top: 30px;
+    right: 30px;
+    width: 150px;
+    height: 30px;
+    overflow: hidden;
+    cursor: pointer;
+    text-align: center;
+}
+#worldmap-toggle > li {
+    width: 150px;
+    height: 30px;
+    padding-top: 5px;
+}
+#worldmap-toggle > li:hover {
+    background: rgba(0,0,0,0.8);
+}
+#worldmap-victoria, #worldmap-karkar, #worldmap-darkness {
+    position: relative;
+}
+
+.worldmap-quest {
+    z-index: 10;
+    position: absolute;
+}
+.worldmap-quest-list {
+    visibility: hidden;
+    z-index: 21;
+    position: absolute;
+    list-style: none;
+    width: 220px;
+    text-align: center;
+    margin: 0px;
+    padding: 5px;
+    border: #333333 2px solid;
+    border-radius: 10px;
+    background: rgba(0,0,0,0.75);
+}
+.worldmap-quest-list-title {
+    color: #ffffff;
+    font-size: 0.8em;
+    
+}
+.worldmap-quest-list-item {
+    color: #ffffff;
+    font-size: 0.7em;
+    text-align: left;
+}
+.worldmap-quest-excl {
+    z-index: 20;
+    position: absolute;
+    cursor:pointer;
+}
+
+/*
+.all-quest {
+    padding: 10px 0px 10px 0px;
+    margin: 10px 0px 10px 0px;
+    list-style: none;
+    overflow-y: scroll;
+    
+    height: 85%;
+}
+.all-quest-list-item {
+    padding: 3px 0px 3px 0px;
+    cursor: pointer; 
+}
+.all-quest-list-item:nth-child(odd) {
+    background-color: #fafafa;
+}
+.all-quest-list-item:nth-child(even) {
+    background-color: #ffffff;
+}
+
+.all-quest-list-item:hover {
+    background-color: #f3f3f3;
+}
+*/

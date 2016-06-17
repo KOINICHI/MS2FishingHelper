@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<script type="text/javascript" src="./jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="./angular.min.js"></script>
+<script type="text/javascript" src="./cookies.js"></script>
+<script type="text/javascript" src="./js.js"></script>
+<link rel="stylesheet" href="./style.css" type="text/css" media="screen" />
+<title> 메이플스토리2 낚시 도우미 </title>
+
+<body ng-app="ArikkariHelper" ng-controller="ArikkariHelperCtrl" ng-keydown="keydownHandler($event)" data-ng-init="init()">
+<div id='main'>
+    <div id="worldmap-wrap" style="padding: 0px" ng-click="$event.stopPropagation();">
+        <ul id="worldmap-toggle">
+            <li selected>빅토리아 아일랜드</span>
+            <li>다크니스 아일랜드</span>
+            <li>카르카르 아일랜드</span>
+        </ul>
+        <div id="worldmap-victoria"></div>
+        <div id="worldmap-darkness"></div>
+        <div id="worldmap-karkar"></div>
+        <img name='{{x}}' class='worldmap-quest-excl' src='http://koinichi.github.io/MS2DailiesHelper/excl.png' ng-repeat="x in (Quests | ongoingMapFilter)" style="display: none" hovertoshow render-excl />
+        <ul name='{{x}}' class='worldmap-quest-list' ng-repeat="x in (Quests | ongoingMapFilter)">
+            <span class='worldmap-quest-list-title'>{{Maps[x].name}}</span>
+            <li class='worldmap-quest-list-item' ng-repeat="y in Maps[x].quests">{{y}}</li>
+        </ul>
+    </div>
+    <div id="my-quest-wrap">
+        <ul class='my-quest'>
+            <li name="{{x.id}}" class='my-quest-list-item {{Status[x.status]}}' ng-repeat="x in (Quests | myquestFilter | listFilter:filtertext)" ng-click="clearQuest($event)">
+                <span name="{{x.id}}" class="my-quest-list-item-desc">{{x.desc}}</span>
+                <span name="{{x.id}}_map" class="my-quest-list-item-map" ng-mouseenter="showMapList($event)" ng-mouseleave="hideMapList($event)">🚁</span>
+            </li>
+        </ul>
+        <ul class='my-quest'>
+            <li name="{{x.id}}" class='my-quest-list-item {{Status[x.status]}}' ng-repeat="x in (Quests | notstartedFilter | listFilter:filtertext)" ng-click="startQuest($event)">
+                <span name="{{x.id}}" class="my-quest-list-item-desc">{{x.desc}}</span>
+                <span name="{{x.id}}_map" class="my-quest-list-item-map" ng-mouseenter="showMapList($event)" ng-mouseleave="hideMapList($event)">🚁</span>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div ng-show="currentScreen" class='popup-wrap' ng-click="currentScreen = 0;">
+        <div ng-show="currentScreen == 2" class='popup home' ng-click="$event.stopPropagation();">
+        <p style="min-width:90%; margin: 0px auto;">
+            <span style="font-size:16pt; font-weight:bold">메이플스토리2 낚시 도우미</span> <br />
+            <br />
+            <b>2016/6/17 : 오픈!</b><br />
+            <br />
+            어... 그냥... 이게 다예요... <br />
+            마지막으로 깨알 홍보 플레이 스토어에서 <a href="https://play.google.com/store/apps/details?id=kr.koinichi.ms2bosstimer" target="_blank">MS2 보스 타이머</a>도 확인해주세여! <br />
+            <br />
+            - '메럿' 길드 치즈모치 -  <br />
+        </p>
+    </div>
+</div>
+                            
+
+</body>
+
+<script type="text/javascript" src="http://koinichi.github.io/MS2DailiesHelper/worldmap.js"></script>
+
+</html>
+
