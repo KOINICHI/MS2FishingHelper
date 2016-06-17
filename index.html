@@ -2,7 +2,6 @@
 <html>
 <script type="text/javascript" src="./jquery-2.1.4.min.js"></script>
 <script type="text/javascript" src="./angular.min.js"></script>
-<script type="text/javascript" src="./cookies.js"></script>
 <script type="text/javascript" src="./js.js"></script>
 <link rel="stylesheet" href="./style.css" type="text/css" media="screen" />
 <title> 메이플스토리2 낚시 도우미 </title>
@@ -18,7 +17,7 @@
         <div id="worldmap-victoria"></div>
         <div id="worldmap-darkness"></div>
         <div id="worldmap-karkar"></div>
-        <img name='{{x}}' class='worldmap-quest-excl' src='http://koinichi.github.io/MS2DailiesHelper/excl.png' ng-repeat="x in (Quests | ongoingMapFilter)" style="display: none" hovertoshow render-excl />
+        <img name='{{x}}' class='worldmap-quest-excl' src='https://koinichi.github.io/MS2DailiesHelper/excl.png' ng-repeat="x in (Quests | ongoingMapFilter)" style="display: none" hovertoshow render-excl />
         <ul name='{{x}}' class='worldmap-quest-list' ng-repeat="x in (Quests | ongoingMapFilter)">
             <span class='worldmap-quest-list-title'>{{Maps[x].name}}</span>
             <li class='worldmap-quest-list-item' ng-repeat="y in Maps[x].quests">{{y}}</li>
@@ -58,7 +57,7 @@
 
 </body>
 
-<script type="text/javascript" src="http://koinichi.github.io/MS2DailiesHelper/worldmap.js"></script>
+<script type="text/javascript" src="https://koinichi.github.io/MS2DailiesHelper/worldmap.js"></script>
 
 </html>
 

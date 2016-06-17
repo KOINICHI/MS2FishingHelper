@@ -7,7 +7,7 @@ Main.controller('ArikkariHelperCtrl', ['$scope', '$http', function($scope, $http
 	$scope.Maps = [];
 
 	$scope.mapShown = true;
-	$http.get('http://koinichi.github.io/MS2DailiesHelper/maps.json').success( function (map_res) {
+	$http.get('https://koinichi.github.io/MS2DailiesHelper/maps.json').success( function (map_res) {
 		$scope.Maps = map_res;
 		for (var map in $scope.Maps) {
 			$scope.Maps[map].quests = [];
@@ -17,7 +17,7 @@ Main.controller('ArikkariHelperCtrl', ['$scope', '$http', function($scope, $http
             }
             if (map[1] == '3') { $scope.Maps[map].cont = 1; } // darkness island
 		}
-		$http.get('http://koinichi.github.io/MS2DailiesHelper/quests.json').success( function (quest_res) {
+		$http.get('https://koinichi.github.io/MS2FishingHelper/quests.json').success( function (quest_res) {
 			$scope.Quests = quest_res;
 			for (i=0; i<$scope.Quests.length; i++) {
 				var status = getCookie($scope.Quests[i].id);
