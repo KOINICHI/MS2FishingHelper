@@ -145,7 +145,7 @@ a:hover {
     vertical-align: top;
     margin: 0px;
     width: 40%; 
-    height: calc(100% - 80px);
+    height: calc(100% - 15px);
     overflow-y: scroll;
 }
 .my-quest-button-small {
@@ -232,9 +232,9 @@ a:hover {
     vertical-align: top;
     overflow: hidden;
     width: 60%;
-    height: calc(100% - 110px);
+    height: calc(100% - 30px);
     margin: 10px;
-    background: url('http://koinichi.github.io/MS2DailiesHelper/bg_map_ptn.jpg');
+    background: url('https://koinichi.github.io/MS2DailiesHelper/bg_map_ptn.jpg');
     background-repeat: repeat;
     border: #cccccc 3px solid;
     border-radius: 10px;
