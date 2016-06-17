@@ -1,3 +1,6 @@
 *.psd
 *~
 tools/
+levels.txt
+a.py
+maps.txt
